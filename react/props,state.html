@@ -16,8 +16,8 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
   <script type="text/babel">
-    //Props 는 컴포넌트 외부에서 컴포넌트에게 주는 데이터
-    //State 는 컴포넌트 내부에서 변경할 수 있는 데이터
+    // Props 는 컴포넌트 외부에서 컴포넌트에게 주는 데이터
+    // State 는 컴포넌트 내부에서 변경할 수 있는 데이터
     // 변경이 둘다 발생 시, 랜더가 다시 일어 날 수 있다.
 
     /*render 함수
@@ -45,12 +45,12 @@
 
 
     class Component1 extends React.Component {
-      // state 는 항상 객체형태 {}
+      // count 초기화 방법 1 : state 는 항상 객체형태 {}
       state = {
         count: 0,
       }
 
-      // constructor(props) {super(props)}
+      // 방법 2 : constructor(props) {super(props)}
       constructor(props) {
         super(props);
 
@@ -79,7 +79,7 @@
         }, 1000)
       }
 
-      // 기본값 넣기 1 (class 사용 가능)
+      // 기본값 넣기 1 (class 사용 가능) static
       static defaultProps = {
         message: "기본 값1"
       }

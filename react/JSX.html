@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <div id="root"></div>
+  <script type="text/babel">
+    // JSX 문법
+
+    // 1. 최상위 요소가 하나여야 한다.
+    // 2. 최상위 요소 리턴하는 경우, () 감싸야 한다
+    // 3. 자식들을바로 랜더링 하고 싶으면, <> 자식들 </> 사용 => Fragment
+    // 4. 자바스크립트 표현식을 사용하려면 {표현식} 이용
+    // 5. if문은 사용할 수 없다 대신
+    // 6. 삼항연산자 or && 사용
+    // 7. style을 대신해 인라인 스타일링 가능
+    // 8. class 대신 className 을 사용해 class를 적용 할 수 있다 
+    // 9. 자식요소가 있으면, 꼭 닫아야 하고 / 없으면 열면서 닫아야 한다
+    // <p>people</p>
+    // <br />
+
+    const title = "JS 주제"
+
+    ReactDOM.render(
+      <>
+      <div>
+        <div>
+          <h1>주제</h1>
+          <ul>
+            <li>React</li>  
+            <li>Vue</li>  
+          </ul>  
+        </div>  
+      </div>
+      <div>
+        <div>
+          <h1>주제</h1>
+          <h1>{title}</h1>
+          <ul>
+            <li>React</li>  
+            <li>Vue</li>  
+          </ul>  
+        </div>  
+      </div>,
+    </>,
+
+      document.querySelector('#root')
+    )
+
+  </script>
+</body>
+</html>

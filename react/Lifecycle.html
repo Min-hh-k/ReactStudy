@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    // Declarative 선언형
+
+    // Component 생성 및 마운트
+    // constructor (생성)
+    // componentWillMount (마운트 직 전)-표현
+    // redner (최초 랜더)
+    // componentDidMount (마운트 직 후)
+
+    class App extends React.Componenet {
+      state = {
+        age: 39,
+      }
+      constructor(props) {
+        super(props);
+
+        console.log("constructor", props)
+      }
+
+      render() {
+        console.log('render')
+        return (
+          <div>
+            <h2>
+              Hello {this.props.name} - {this.state.age}
+            </h2>
+          </div>
+        )
+      }
+      componentWillMount() {
+        console.log('componentWillMount')
+      }
+      componentDidMount() {
+        console.log('componentDidMount')
+
+        setInterval(() => {
+          console.log('setInterval');
+          this.setState((state) => ({...state, age: state.age + 1}))
+        }, 1000)
+      }
+    }
+
+    ReactDOM.render(<App name="Mark"/>,
+      document.querySelector('#root')
+    )
+
+  </script>
+</body>
+</html>

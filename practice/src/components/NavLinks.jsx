@@ -6,7 +6,7 @@ export default function NavLinks() {
 	return (
 		<ul>
 			<li>
-				<NavLink to="/" exact="true" activestyle={activeStyle}>
+				<NavLink to="/" activeStyle={activeStyle}>
 					Home
 				</NavLink>
 			</li>

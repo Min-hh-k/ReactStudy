@@ -18,6 +18,9 @@ export default function Links() {
 			<li>
 				<Link to="/notfound">not found</Link>
 			</li>
+			<li>
+				<Link to="/login">login</Link>
+			</li>
 		</ul>
 	);
 }

@@ -4,12 +4,19 @@ import "./App.css";
 // import Example2 from "./components/Example2";
 // import Example3 from "./components/Example3";
 // import Example4 from "./components/Example4";
-import Example5 from "./components/Example5";
+// import Example5 from "./components/Example5";
+import Example6 from "./components/Example6";
+import Example7 from "./components/Example7";
+import Example8 from "./components/Example8";
 import useWindowWidth from "./hooks/UseWindowWidth";
+import withHasMounted from "./hocs/withHasMounted";
+import useHasMounted from "./hooks/useHasMounted";
 
-function App() {
+function App({ hasMounted }) {
 	const width = useWindowWidth();
+	const hasMountedFromHooks = useHasMounted();
 
+	console.log(hasMounted, hasMountedFromHooks);
 	return (
 		<div className="App">
 			<header className="App-header">
@@ -17,12 +24,15 @@ function App() {
 				{/* <Example1 />
 				<Example2 />
 				<Example3 />
-				<Example4 /> */}
-				<Example5 />
+				<Example4 />
+				<Example5 /> */}
+				<Example6 />
+				<Example7 />
+				<Example8 />
 				{width}
 			</header>
 		</div>
 	);
 }
 
-export default App;
+export default withHasMounted(App);

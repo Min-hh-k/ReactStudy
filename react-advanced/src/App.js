@@ -2,7 +2,7 @@
 import "./App.css";
 import React from "react";
 import Modal from "../components/modal";
-import {useState} from "react";
+import { useState } from "react";
 
 // class Foo extends React.Component {
 // 	componentDidMount() {
@@ -49,6 +49,7 @@ import {useState} from "react";
 // 		);
 // 	}
 // }
+
 function App() {
 	const [visible, setVisible] = useState(false);
 	const open = () => {

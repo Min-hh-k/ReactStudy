@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store";
-import { addTodo } from "./redux/actions;";
+import { addTodo, completeTodo, showComplete } from "./redux/actions";
 
 store.subscribe(() => {
 	console.log(store.getState());
 });
 
 // console.log(store);
+store.dispatch(addTodo("할일"));
+store.dispatch(completeTodo(0));
+store.dispatch(showComplete());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
